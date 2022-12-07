@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,14 @@ class Product
 
     #[ORM\Column]
     private ?int $AvRating = null;
+
+    #[ORM\OneToMany(mappedBy: 'product', targetEntity: Review::class, orphanRemoval: true)]
+    private Collection $ProductReview;
+
+    public function __construct()
+    {
+        $this->ProductReview = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +100,36 @@ class Product
     public function setAvRating(int $AvRating): self
     {
         $this->AvRating = $AvRating;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Review>
+     */
+    public function getProductReview(): Collection
+    {
+        return $this->ProductReview;
+    }
+
+    public function addProductReview(Review $productReview): self
+    {
+        if (!$this->ProductReview->contains($productReview)) {
+            $this->ProductReview->add($productReview);
+            $productReview->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductReview(Review $productReview): self
+    {
+        if ($this->ProductReview->removeElement($productReview)) {
+            // set the owning side to null (unless already changed)
+            if ($productReview->getProduct() === $this) {
+                $productReview->setProduct(null);
+            }
+        }
 
         return $this;
     }
