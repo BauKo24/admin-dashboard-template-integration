@@ -34,9 +34,13 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Review::class, orphanRemoval: true)]
     private Collection $ProductReview;
 
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'products')]
+    private Collection $ProductCategory;
+
     public function __construct()
     {
         $this->ProductReview = new ArrayCollection();
+        $this->ProductCategory = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -130,6 +134,30 @@ class Product
                 $productReview->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getProductCategory(): Collection
+    {
+        return $this->ProductCategory;
+    }
+
+    public function addProductCategory(Category $productCategory): self
+    {
+        if (!$this->ProductCategory->contains($productCategory)) {
+            $this->ProductCategory->add($productCategory);
+        }
+
+        return $this;
+    }
+
+    public function removeProductCategory(Category $productCategory): self
+    {
+        $this->ProductCategory->removeElement($productCategory);
 
         return $this;
     }
