@@ -28,11 +28,7 @@ class Review
 
     #[ORM\Column]
     private ?bool $ValidationState = true;
-
-    #[ORM\ManyToOne(inversedBy: 'UserReview')]
-    #[ORM\JoinColumn(nullable: true)]
-    private ?User $user = null;
-
+    
     #[ORM\ManyToOne(inversedBy: 'ProductReview')]
     #[ORM\JoinColumn(nullable: true)]
     private ?Product $product = null;
@@ -102,17 +98,6 @@ class Review
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     public function getProduct(): ?Product
     {
