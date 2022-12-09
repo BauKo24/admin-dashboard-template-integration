@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Brief 7 - Database Hub{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,14 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Welcome to our Database Hub! ✅</h1>
 
-    This friendly message is coming from:
+    Here are our tables:
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/ethan/Desktop/CODE/dwwm/brief7/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/ethan/Desktop/CODE/dwwm/brief7/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
+        <li>Users are <a href="{{path("app_user_index")}}">here!</a></li>
+        <li>Products are <a href="{{path("app_product_index")}}">here!</a></li>
+        <li>Categories are <a href="{{path("app_category_index")}}">here!</a></li>
+        <li>Reviews are <a href="{{path("app_review_index")}}">here!</a></li>
     </ul>
 </div>
 {% endblock %}
