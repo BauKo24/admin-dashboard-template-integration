@@ -30,11 +30,11 @@ class Review
     private ?bool $ValidationState = true;
 
     #[ORM\ManyToOne(inversedBy: 'UserReview')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'ProductReview')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Product $product = null;
 
     public function getId(): ?int
