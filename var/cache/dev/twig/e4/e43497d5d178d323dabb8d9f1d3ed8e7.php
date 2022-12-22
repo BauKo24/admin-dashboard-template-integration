@@ -65,7 +65,8 @@ class __TwigTemplate_42f3b3cb810078950ba8f6977eab5a1a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Review index";
+        echo "Review index
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +75,7 @@ class __TwigTemplate_42f3b3cb810078950ba8f6977eab5a1a extends Template
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,88 +85,88 @@ class __TwigTemplate_42f3b3cb810078950ba8f6977eab5a1a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Review index</h1>
+        // line 7
+        echo "\t<h1>Review index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>UserAuth</th>
-                <th>Date</th>
-                <th>Rating</th>
-                <th>Description</th>
-                <th>ValidationState</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 21
+\t<table class=\"table\">
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<th>Id</th>
+                <th>User</th>
+\t\t\t\t<th>Date</th>
+\t\t\t\t<th>Rating</th>
+\t\t\t\t<th>Description</th>
+\t\t\t\t<th>ValidationState</th>
+\t\t\t\t<th>actions</th>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody>
+\t\t\t";
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reviews"]) || array_key_exists("reviews", $context) ? $context["reviews"] : (function () { throw new RuntimeError('Variable "reviews" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reviews"]) || array_key_exists("reviews", $context) ? $context["reviews"] : (function () { throw new RuntimeError('Variable "reviews" does not exist.', 22, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["review"]) {
-            // line 22
-            echo "            <tr>
-                <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-                <td>";
+            echo "\t\t\t\t<tr>
+\t\t\t\t\t<td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "UserAuth", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
-                <td>";
+                    <td>";
             // line 25
-            ((twig_get_attribute($this->env, $this->source, $context["review"], "Date", [], "any", false, false, false, 25)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "Date", [], "any", false, false, false, 25), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["review"], "getUser", [], "method", false, false, false, 25), "email", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
-                <td>";
+\t\t\t\t\t<td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "Rating", [], "any", false, false, false, 26), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["review"], "Date", [], "any", false, false, false, 26)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "Date", [], "any", false, false, false, 26), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
-                <td>";
+\t\t\t\t\t<td>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "Description", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "Rating", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
-                <td>";
+\t\t\t\t\t<td>";
             // line 28
-            echo ((twig_get_attribute($this->env, $this->source, $context["review"], "ValidationState", [], "any", false, false, false, 28)) ? ("Yes") : ("No"));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "Description", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
-                <td>
-                    <a href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_review_show", ["id" => twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 30)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
+\t\t\t\t\t<td>";
+            // line 29
+            echo ((twig_get_attribute($this->env, $this->source, $context["review"], "ValidationState", [], "any", false, false, false, 29)) ? ("Yes") : ("No"));
+            echo "</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"";
             // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_review_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_review_show", ["id" => twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            echo "\">show</a>
+\t\t\t\t\t\t<a href=\"";
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_review_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\">edit</a>
-                </td>
-            </tr>
-        ";
+\t\t\t\t\t</td>
+\t\t\t\t</tr>
+\t\t\t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 35
-            echo "            <tr>
-                <td colspan=\"7\">no records found</td>
-            </tr>
-        ";
+            // line 36
+            echo "\t\t\t\t<tr>
+\t\t\t\t\t<td colspan=\"7\">no records found</td>
+\t\t\t\t</tr>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['review'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
-        echo "        </tbody>
-    </table>
+        // line 40
+        echo "\t\t</tbody>
+\t</table>
 
-    <a href=\"";
-        // line 42
+\t<a href=\"";
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_review_new");
         echo "\">Create new</a>
-    <a href=\"";
-        // line 43
+\t<a href=\"";
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hub");
         echo "\">Back to hub</a>
 ";
@@ -189,54 +190,55 @@ class __TwigTemplate_42f3b3cb810078950ba8f6977eab5a1a extends Template
 
     public function getDebugInfo()
     {
-        return array (  169 => 43,  165 => 42,  160 => 39,  151 => 35,  142 => 31,  138 => 30,  133 => 28,  129 => 27,  125 => 26,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  170 => 44,  166 => 43,  161 => 40,  152 => 36,  143 => 32,  139 => 31,  134 => 29,  130 => 28,  126 => 27,  122 => 26,  118 => 25,  114 => 24,  111 => 23,  106 => 22,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Review index{% endblock %}
+{% block title %}Review index
+{% endblock %}
 
 {% block body %}
-    <h1>Review index</h1>
+\t<h1>Review index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>UserAuth</th>
-                <th>Date</th>
-                <th>Rating</th>
-                <th>Description</th>
-                <th>ValidationState</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for review in reviews %}
-            <tr>
-                <td>{{ review.id }}</td>
-                <td>{{ review.UserAuth }}</td>
-                <td>{{ review.Date ? review.Date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ review.Rating }}</td>
-                <td>{{ review.Description }}</td>
-                <td>{{ review.ValidationState ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href=\"{{ path('app_review_show', {'id': review.id}) }}\">show</a>
-                    <a href=\"{{ path('app_review_edit', {'id': review.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"7\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+\t<table class=\"table\">
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<th>Id</th>
+                <th>User</th>
+\t\t\t\t<th>Date</th>
+\t\t\t\t<th>Rating</th>
+\t\t\t\t<th>Description</th>
+\t\t\t\t<th>ValidationState</th>
+\t\t\t\t<th>actions</th>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody>
+\t\t\t{% for review in reviews %}
+\t\t\t\t<tr>
+\t\t\t\t\t<td>{{ review.id }}</td>
+                    <td>{{ review.getUser().email }}</td>
+\t\t\t\t\t<td>{{ review.Date ? review.Date|date('Y-m-d H:i:s') : '' }}</td>
+\t\t\t\t\t<td>{{ review.Rating }}</td>
+\t\t\t\t\t<td>{{ review.Description }}</td>
+\t\t\t\t\t<td>{{ review.ValidationState ? 'Yes' : 'No' }}</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"{{ path('app_review_show', {'id': review.id}) }}\">show</a>
+\t\t\t\t\t\t<a href=\"{{ path('app_review_edit', {'id': review.id}) }}\">edit</a>
+\t\t\t\t\t</td>
+\t\t\t\t</tr>
+\t\t\t{% else %}
+\t\t\t\t<tr>
+\t\t\t\t\t<td colspan=\"7\">no records found</td>
+\t\t\t\t</tr>
+\t\t\t{% endfor %}
+\t\t</tbody>
+\t</table>
 
-    <a href=\"{{ path('app_review_new') }}\">Create new</a>
-    <a href=\"{{ path('hub') }}\">Back to hub</a>
+\t<a href=\"{{ path('app_review_new') }}\">Create new</a>
+\t<a href=\"{{ path('hub') }}\">Back to hub</a>
 {% endblock %}
 ", "review/index.html.twig", "C:\\Users\\ethan\\Desktop\\CODE\\dwwm\\brief7\\templates\\review\\index.html.twig");
     }

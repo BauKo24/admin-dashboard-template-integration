@@ -93,7 +93,6 @@ class __TwigTemplate_38b852abf7929e0b8d65335d838184d9 extends Template
                 <th>Id</th>
                 <th>Title</th>
                 <th>Description</th>
-                <th>CoverImage</th>
                 <th>Date</th>
                 <th>AvRating</th>
                 <th>actions</th>
@@ -101,45 +100,41 @@ class __TwigTemplate_38b852abf7929e0b8d65335d838184d9 extends Template
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 20, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 22
+            // line 21
             echo "            <tr>
                 <td>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 22), "html", null, true);
+            echo "</td>
+                <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Title", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
                 <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Title", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Description", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                 <td>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Description", [], "any", false, false, false, 25), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["product"], "Date", [], "any", false, false, false, 25)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Date", [], "any", false, false, false, 25), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "CoverImage", [], "any", false, false, false, 26), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 27
-            ((twig_get_attribute($this->env, $this->source, $context["product"], "Date", [], "any", false, false, false, 27)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Date", [], "any", false, false, false, 27), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "AvRating", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "AvRating", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -147,7 +142,7 @@ class __TwigTemplate_38b852abf7929e0b8d65335d838184d9 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 35
+            // line 33
             echo "            <tr>
                 <td colspan=\"7\">no records found</td>
             </tr>
@@ -156,16 +151,16 @@ class __TwigTemplate_38b852abf7929e0b8d65335d838184d9 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 37
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 42
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_new");
         echo "\">Create new</a>
     <a href=\"";
-        // line 43
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hub");
         echo "\">Back to hub</a>
 ";
@@ -189,7 +184,7 @@ class __TwigTemplate_38b852abf7929e0b8d65335d838184d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  169 => 43,  165 => 42,  160 => 39,  151 => 35,  142 => 31,  138 => 30,  133 => 28,  129 => 27,  125 => 26,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  164 => 41,  160 => 40,  155 => 37,  146 => 33,  137 => 29,  133 => 28,  128 => 26,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -207,7 +202,6 @@ class __TwigTemplate_38b852abf7929e0b8d65335d838184d9 extends Template
                 <th>Id</th>
                 <th>Title</th>
                 <th>Description</th>
-                <th>CoverImage</th>
                 <th>Date</th>
                 <th>AvRating</th>
                 <th>actions</th>
@@ -219,7 +213,6 @@ class __TwigTemplate_38b852abf7929e0b8d65335d838184d9 extends Template
                 <td>{{ product.id }}</td>
                 <td>{{ product.Title }}</td>
                 <td>{{ product.Description }}</td>
-                <td>{{ product.CoverImage }}</td>
                 <td>{{ product.Date ? product.Date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ product.AvRating }}</td>
                 <td>

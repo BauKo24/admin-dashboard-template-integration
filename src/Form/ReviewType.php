@@ -17,13 +17,12 @@ class ReviewType extends AbstractType
         $builder
             ->add('user', EntityType::class, [
                 'class' => User::class,
-                'choice_label' => 'Username',
+                'choice_label' => 'email',
             ])
             ->add('product', EntityType::class, [
                 'class' => Product::class,
                 'choice_label' => 'Title',
             ])
-            ->add('UserAuth')
             ->add('Date')
             ->add('Rating')
             ->add('Description')

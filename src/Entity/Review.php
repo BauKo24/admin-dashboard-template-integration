@@ -14,9 +14,6 @@ class Review
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $UserAuth = null;
-
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $Date = null;
 
@@ -33,21 +30,13 @@ class Review
     #[ORM\JoinColumn(nullable: true)]
     private ?Product $product = null;
 
+    #[ORM\ManyToOne(inversedBy: 'reviews')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $User = null;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUserAuth(): ?string
-    {
-        return $this->UserAuth;
-    }
-
-    public function setUserAuth(string $UserAuth): self
-    {
-        $this->UserAuth = $UserAuth;
-
-        return $this;
     }
 
     public function getDate(): ?\DateTimeInterface
@@ -110,4 +99,18 @@ class Review
 
         return $this;
     }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): self
+    {
+        $this->User = $User;
+
+        return $this;
+    }
+
+    
 }
