@@ -12,8 +12,12 @@
                 <td>{{ review.id }}</td>
             </tr>
             <tr>
-                <th>UserAuth</th>
-                <td>{{ review.UserAuth }}</td>
+                <th>User</th>
+                <td>{{ review.getUser().email }}</td>
+            </tr>
+            <tr>
+                <th>Product</th>
+                <td>{{ review.getProduct().Title }}</td>
             </tr>
             <tr>
                 <th>Date</th>

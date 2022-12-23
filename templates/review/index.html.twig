@@ -11,6 +11,7 @@
 			<tr>
 				<th>Id</th>
                 <th>User</th>
+				<th>Product</th>
 				<th>Date</th>
 				<th>Rating</th>
 				<th>Description</th>
@@ -23,6 +24,7 @@
 				<tr>
 					<td>{{ review.id }}</td>
                     <td>{{ review.getUser().email }}</td>
+					<td>{{ review.getProduct().Title }}</td>
 					<td>{{ review.Date ? review.Date|date('Y-m-d H:i:s') : '' }}</td>
 					<td>{{ review.Rating }}</td>
 					<td>{{ review.Description }}</td>
