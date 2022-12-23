@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+// use App\Entity\User;
 use App\Entity\Review;
 use App\Form\ReviewType;
 use App\Repository\ReviewRepository;
@@ -15,7 +16,9 @@ class ReviewController extends AbstractController
 {
     #[Route('/', name: 'app_review_index', methods: ['GET'])]
     public function index(ReviewRepository $reviewRepository): Response
-    {
+    {   
+        // $user = $this->getUser();
+        // $rev = $user->getReview();
         return $this->render('review/index.html.twig', [
             'reviews' => $reviewRepository->findAll(),
         ]);
@@ -29,6 +32,8 @@ class ReviewController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // $user = $this->getUser();
+            // $review->SetUser($user);
             $reviewRepository->save($review, true);
 
             return $this->redirectToRoute('app_review_index', [], Response::HTTP_SEE_OTHER);
