@@ -15,10 +15,6 @@ class ReviewType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'email',
-            ])
             ->add('product', EntityType::class, [
                 'class' => Product::class,
                 'choice_label' => 'Title',

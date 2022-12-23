@@ -13274,24 +13274,24 @@
 
     var global$a = tinymce.util.Tools.resolve('tinymce.html.Entities');
 
-    var renderFormFieldWith = function (pLabel, pField, extraClasses, extraBehaviours) {
-      var spec = renderFormFieldSpecWith(pLabel, pField, extraClasses, extraBehaviours);
+    var renderFieldWith = function (pLabel, pField, extraClasses, extraBehaviours) {
+      var spec = renderFieldSpecWith(pLabel, pField, extraClasses, extraBehaviours);
       return FormField.sketch(spec);
     };
-    var renderFormField = function (pLabel, pField) {
-      return renderFormFieldWith(pLabel, pField, [], []);
+    var renderField = function (pLabel, pField) {
+      return renderFieldWith(pLabel, pField, [], []);
     };
-    var renderFormFieldSpecWith = function (pLabel, pField, extraClasses, extraBehaviours) {
+    var renderFieldSpecWith = function (pLabel, pField, extraClasses, extraBehaviours) {
       return {
-        dom: renderFormFieldDomWith(extraClasses),
+        dom: renderFieldDomWith(extraClasses),
         components: pLabel.toArray().concat([pField]),
         fieldBehaviours: derive$1(extraBehaviours)
       };
     };
-    var renderFormFieldDom = function () {
-      return renderFormFieldDomWith([]);
+    var renderFieldDom = function () {
+      return renderFieldDomWith([]);
     };
-    var renderFormFieldDomWith = function (extraClasses) {
+    var renderFieldDomWith = function (extraClasses) {
       return {
         tag: 'div',
         classes: ['tox-form__group'].concat(extraClasses)
@@ -13439,7 +13439,7 @@
         ], _a)
       });
       var extraClasses = ['tox-form__group--collection'];
-      return renderFormFieldWith(pLabel, pField, extraClasses, []);
+      return renderFieldWith(pLabel, pField, extraClasses, []);
     };
 
     var schema$f = constant([
@@ -16674,7 +16674,7 @@
         return renderLabel(label, providersBackstage);
       });
       var pField = FormField.parts.field({ factory: { sketch: renderField } });
-      return renderFormFieldWith(pLabel, pField, ['tox-form__group--stretched'], []);
+      return renderFieldWith(pLabel, pField, ['tox-form__group--stretched'], []);
     };
 
     var renderGrid = function (spec, backstage) {
@@ -16792,7 +16792,7 @@
         });
       };
       var pField = FormField.parts.field({ factory: { sketch: factory } });
-      return renderFormFieldWith(pLabel, pField, ['tox-form__group--stretched'], []);
+      return renderFieldWith(pLabel, pField, ['tox-form__group--stretched'], []);
     };
 
     function create$5(width, height) {
@@ -18174,7 +18174,7 @@
     };
     var renderDialogButton = function (spec, providersBackstage) {
       var action = getAction(spec.name, 'custom');
-      return renderFormField(Optional.none(), FormField.parts.field(__assign({ factory: Button }, renderButtonSpec(spec, Optional.some(action), providersBackstage, [
+      return renderField(Optional.none(), FormField.parts.field(__assign({ factory: Button }, renderButtonSpec(spec, Optional.some(action), providersBackstage, [
         RepresentingConfigs.memory(''),
         ComposingConfigs.self()
       ]))));
@@ -20313,7 +20313,7 @@
         }),
         receivingConfig()
       ];
-      return renderFormFieldWith(pLabel, pField, extraClasses2, extraBehaviours);
+      return renderFieldWith(pLabel, pField, extraClasses2, extraBehaviours);
     };
     var renderInput = function (spec, providersBackstage) {
       return renderTextField({
@@ -21131,7 +21131,7 @@
         });
       };
       return FormField.sketch({
-        dom: renderFormFieldDom(),
+        dom: renderFieldDom(),
         components: pLabel.toArray().concat([controlHWrapper()]),
         fieldBehaviours: derive$1([
           Disabling.config({
