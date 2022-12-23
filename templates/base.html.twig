@@ -50,7 +50,7 @@
 					</ul>
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item dropdown d-none d-lg-block">
-							
+
 							<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
 								<a class="dropdown-item py-3">
 									<p class="mb-0 font-weight-medium float-left">Select category</p>
@@ -83,12 +83,10 @@
 								</a>
 							</div>
 						</li>
-						<li class="nav-item d-none d-lg-block">
-							
-						</li>
-						
+						<li class="nav-item d-none d-lg-block"></li>
+
 						<li class="nav-item dropdown">
-							
+
 							<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
 								<a class="dropdown-item py-3 border-bottom">
 									<p class="mb-0 font-weight-medium float-left">You have 4 new notifications
@@ -193,7 +191,7 @@
 								<a class="dropdown-item">
 									<i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i>
 									My
-																																					                Profile
+																																																																                Profile
 									<span class="badge badge-pill badge-danger">1</span>
 								</a>
 								<a class="dropdown-item">
@@ -220,7 +218,7 @@
 				class="container-fluid page-body-wrapper">
 				<!-- partial:partials/_settings-panel.html -->
 				<div class="theme-setting-wrapper">
-					
+
 					<div id="theme-settings" class="settings-panel">
 						<i class="settings-close ti-close"></i>
 						<p class="settings-heading">SIDEBAR SKINS</p>
@@ -408,49 +406,51 @@
 							</a>
 						</li>
 						<li class="nav-item nav-category">Forms and Datas</li>
-						<li class="nav-item">
-							<a class="nav-link" data-bs-toggle="collapse" href="{{path("app_product_index")}}" aria-expanded="false" aria-controls="charts">
-								<i class="menu-icon mdi mdi-chart-line"></i>
-								<span class="menu-title">Products</span>
-								<i class="menu-arrow"></i>
-							</a>
-							<div class="collapse" id="charts">
-								<ul class="nav flex-column sub-menu">
-									<li class="nav-item">
-										<a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a>
-									</li>
-								</ul>
-							</div>
+						{% if app.user %}
+							<li class="nav-item">
+								<a class="nav-link" data-bs-toggle="collapse" href="{{path("app_product_index")}}" aria-expanded="false" aria-controls="charts">
+									<i class="menu-icon mdi mdi-chart-line"></i>
+									<span class="menu-title">Products</span>
+									<i class="menu-arrow"></i>
+								</a>
+								<div class="collapse" id="charts">
+									<ul class="nav flex-column sub-menu">
+										<li class="nav-item">
+											<a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-bs-toggle="collapse" href="{{path("app_category_index")}}" aria-expanded="false" aria-controls="tables">
+									<i class="menu-icon mdi mdi-table"></i>
+									<span class="menu-title">Categories</span>
+									<i class="menu-arrow"></i>
+								</a>
+								<div class="collapse" id="tables">
+									<ul class="nav flex-column sub-menu">
+										<li class="nav-item">
+											<a class="nav-link" href="pages/tables/basic-table.html">Basic table</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-bs-toggle="collapse" href="{{path("app_review_index")}}" aria-expanded="false" aria-controls="icons">
+									<i class="menu-icon mdi mdi-layers-outline"></i>
+									<span class="menu-title">Reviews</span>
+									<i class="menu-arrow"></i>
+								</a>
+								<div class="collapse" id="icons">
+									<ul class="nav flex-column sub-menu">
+										<li class="nav-item">
+											<a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a>
+										</li>
+									</ul>
+								</div>
+						{% endif %}
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" data-bs-toggle="collapse" href="{{path("app_category_index")}}" aria-expanded="false" aria-controls="tables">
-								<i class="menu-icon mdi mdi-table"></i>
-								<span class="menu-title">Categories</span>
-								<i class="menu-arrow"></i>
-							</a>
-							<div class="collapse" id="tables">
-								<ul class="nav flex-column sub-menu">
-									<li class="nav-item">
-										<a class="nav-link" href="pages/tables/basic-table.html">Basic table</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" data-bs-toggle="collapse" href="{{path("app_review_index")}}" aria-expanded="false" aria-controls="icons">
-								<i class="menu-icon mdi mdi-layers-outline"></i>
-								<span class="menu-title">Reviews</span>
-								<i class="menu-arrow"></i>
-							</a>
-							<div class="collapse" id="icons">
-								<ul class="nav flex-column sub-menu">
-									<li class="nav-item">
-										<a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
+						<li>( Please login to view tables )</li>
 					</ul>
 				</nav>
 				<!-- partial -->
@@ -527,9 +527,9 @@
 							<span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium
 								<a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a>
 								from
-																																	              BootstrapDash.</span>
+																																																									              BootstrapDash.</span>
 							<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights
-																																	              reserved.</span>
+																																																									              reserved.</span>
 						</div>
 					</footer>
 					<!-- partial -->

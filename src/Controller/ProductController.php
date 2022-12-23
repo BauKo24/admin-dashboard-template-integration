@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
@@ -15,9 +16,11 @@ class ProductController extends AbstractController
 {
     #[Route('/', name: 'app_product_index', methods: ['GET'])]
     public function index(ProductRepository $productRepository): Response
-    {
+    {   
+        $user = $this->getUser();
+        $prod = $user->getProducts();
         return $this->render('product/index.html.twig', [
-            'products' => $productRepository->findAll(),
+            'products' => $prod,
         ]);
     }
 
@@ -29,6 +32,8 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $product->SetUser($user);
             $productRepository->save($product, true);
 
             return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
