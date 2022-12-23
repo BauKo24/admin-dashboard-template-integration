@@ -36,6 +36,14 @@
 				<th>AvRating</th>
 				<td>{{ product.AvRating }}</td>
 			</tr>
+			<tr>
+				<th>Belongs to</th>
+				<td>
+					{% if product.getUser() %}
+						{{ product.getUser().email }}
+					{% endif %}
+				</td>
+			</tr>
 		</tbody>
 	</table>
 

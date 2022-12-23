@@ -7,7 +7,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use App\Entity\User;
 use App\Entity\Product;
 
 class ReviewType extends AbstractType
@@ -22,8 +21,7 @@ class ReviewType extends AbstractType
             ->add('Date')
             ->add('Rating')
             ->add('Description')
-            ->add('ValidationState')
-        ;
+            ->add('ValidationState');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

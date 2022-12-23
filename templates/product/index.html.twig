@@ -13,8 +13,9 @@
 				<th>Title</th>
 				<th>Category</th>
 				<th>Description</th>
-				<th>Date</th>
+				{# <th>Date</th> #}
 				<th>AvRating</th>
+				<th>Belongs to</th>
 				<th>actions</th>
 			</tr>
 		</thead>
@@ -29,8 +30,13 @@
 						{% endfor %}
 					</td>
 					<td>{{ product.Description }}</td>
-					<td>{{ product.Date ? product.Date|date('Y-m-d H:i:s') : '' }}</td>
+					{# <td>{{ product.Date ? product.Date|date('Y-m-d H:i:s') : '' }}</td> #}
 					<td>{{ product.AvRating }}</td>
+					<td>
+						{% if product.getUser() %}
+							{{ product.getUser().email }}
+						{% endif %}
+					</td>
 					<td>
 						<a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
 						<a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>
